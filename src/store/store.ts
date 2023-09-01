@@ -17,7 +17,7 @@ export const useBearStore = create<BearState>()(
       }),
       {
         name: 'bear-storage', // persist key
-      }
-    )
-  )
+      },
+    ),
+  ),
 )

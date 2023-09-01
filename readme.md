@@ -29,7 +29,7 @@ git clone https://github.com/macjjuni/react18-ts-boilerplate.git
 - [x] HTML 템플릿 설정
 - [x] 환경변수 설정
 - [x] Path Alias 설정
-- [ ] React-Router 설정(예정)
+- [x] React-Router 설정(중첩 라우팅X)
 - [ ] Axios 설정
 - [ ] emotion 설정(예정)
 - [x] <del>Redux-toolkit 설정 (카운터 예제)</del> => Zustand 마이그레이션

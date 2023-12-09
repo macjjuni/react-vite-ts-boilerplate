@@ -1,29 +1,18 @@
-import styled from '@emotion/styled'
+import { ReactElement } from 'react'
 import Header from '@/layout/Header'
 import Main from '@/layout/Main'
 import Footer from '@/layout/Footer'
-import getLayoutSize from './layoutSize'
 
-export interface ILayout {
-  style: { height: string }
-}
+// Start - [TailwindCSS]
+const layoutClass = `flex justify-center flex-col max-w-screen-lg min-h-layout mx-auto`
+// End - [TailwindCSS]
 
-const { header, main, footer } = getLayoutSize()
-
-const LayoutStyled = styled.div`
-  height: 100dvh;
-  max-width: 1200px;
-  width: 100%;
-`
-
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export default function Layout({ children }: { children: ReactElement }) {
   return (
-    <LayoutStyled>
-      <Header style={header} />
-      <Main style={main}>{children}</Main>
-      <Footer style={footer} />
-    </LayoutStyled>
+    <div className={layoutClass}>
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
+    </div>
   )
 }
-
-export default Layout

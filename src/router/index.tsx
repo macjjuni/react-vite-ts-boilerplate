@@ -1,18 +1,18 @@
-import React from 'react'
+import { lazy } from 'react'
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
-import App from '@/App'
+import App from '@/entry/App'
+import suspenser from '@/router/suspenser'
+import Loading from '@/components/fallbackUI/Loading'
+import routes from '@/router/route'
 
-const HomeRazy = React.lazy(() => import('@/pages/Home'))
-const UserRazy = React.lazy(() => import('@/pages/User'))
-// const ProfileRazy = React.lazy(() => import('@/pages/User/Profile'))
-// const AccountRazy = React.lazy(() => import('@/pages/User/Account'))
-const ErrorRazy = React.lazy(() => import('@/pages/Error'))
+const ErrorRazy = lazy(() => import('@/pages/Error'))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="" element={<App />}>
-      <Route path="" element={<HomeRazy />} />
-      <Route path="/user" element={<UserRazy />} />
+    <Route path="" element={suspenser(<App />, <Loading />)}>
+      {routes.map((route) => (
+        <Route key={route.path} path={route.path} element={route.component} />
+      ))}
       <Route path="/*" element={<ErrorRazy />} />
     </Route>,
   ),

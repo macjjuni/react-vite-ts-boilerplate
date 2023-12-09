@@ -18,8 +18,8 @@
     "react/function-component-definition": [
       2,
       {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
+        "namedComponents": ["function-declaration", "arrow-function"],
+        "unnamedComponents": ["function-expression"]
       }
     ],
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
@@ -27,7 +27,6 @@
     "default-param-last": "off",
     "no-console": "off",
     "import/no-cycle": "off",
-    // "import/no-unresolved": "off", // alias
     "dot-notation": "off",
     "no-alert": "off",
     "import/extensions": "off",
@@ -42,6 +41,7 @@
     "no-plusplus": "off",
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/return-await": "off",
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "no-return-assign": "off"
   }
 }

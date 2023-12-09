@@ -1,22 +1,19 @@
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
+import type StoreTypes from './store.type'
 
-interface BearState {
-  bears: number
-  increase: (by: number) => void
-  clear: () => void
-}
+const psersistKey = 'persist-key'
 
-export const useBearStore = create<BearState>()(
+export const useBearStore = create<StoreTypes>()(
   devtools(
     persist(
       (set) => ({
         bears: 0,
-        increase: (by) => set((state) => ({ bears: state.bears + by })),
+        increase: (num) => set((state) => ({ bears: state.bears + num })),
         clear: () => set(() => ({ bears: 0 })),
       }),
       {
-        name: 'bear-storage', // persist key
+        name: psersistKey, // persist key
       },
     ),
   ),

@@ -1,8 +1,14 @@
-import FooterStyled from './style'
-import { type ILayout } from '..'
+import { commonLayoutClass } from '@/layout/layout.style'
 
-const Footer = ({ style }: ILayout) => {
-  return <FooterStyled style={style}>footer</FooterStyled>
+// Start - [TailwindCSS]
+const headerClass = `h-footer border-t flex justify-end items-center ${commonLayoutClass}`
+const copyrightClass = 'text-sm'
+// End - [TailwindCSS]
+
+export default function Footer() {
+  return (
+    <footer className={headerClass}>
+      <div className={copyrightClass}>{new Date().getFullYear()} footer.</div>
+    </footer>
+  )
 }
-
-export default Footer

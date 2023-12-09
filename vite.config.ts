@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
       // HTML Template 설정
       createHtmlPlugin({
         minify: false,
-        entry: 'src/main.tsx',
+        entry: 'src/entry/main.tsx',
         template: 'index.html',
         inject: {
           data: {
@@ -25,18 +25,7 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     resolve: {
-      alias: [
-        { find: '@', replacement: path.resolve(__dirname, 'src') },
-        { find: '@api', replacement: path.resolve(__dirname, 'src/api') },
-        { find: '@components', replacement: path.resolve(__dirname, 'src/components') },
-        { find: '@hoc', replacement: path.resolve(__dirname, 'src/hoc') },
-        { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
-        { find: '@layout', replacement: path.resolve(__dirname, 'src/layout') },
-        { find: '@pages', replacement: path.resolve(__dirname, 'src/pages') },
-        { find: '@router', replacement: path.resolve(__dirname, 'src/router') },
-        { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
-        { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
-      ],
+      alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
     },
   }
 })

@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom'
-import HeaderStyled from './style'
-import { type ILayout } from '..'
+import { commonLayoutClass } from '@/layout/layout.style'
+import Navigation from '@/components/navigation'
 
-const Header = ({ style }: ILayout) => {
+// Start - [TailwindCSS]
+const headerClass = `h-header border-b flex justify-between items-center ${commonLayoutClass}`
+const logoClass = 'text-2xl'
+// End - [TailwindCSS]
+
+const logoTitle = import.meta.env.VITE_TITLE || 'Not Found Title'
+
+export default function Header() {
   return (
-    <HeaderStyled.Wrap style={style}>
-      <Link to="/">
-        <HeaderStyled.Logo>Logo</HeaderStyled.Logo>
+    <header className={headerClass}>
+      <Link className={logoClass} to="/">
+        {logoTitle}
       </Link>
-    </HeaderStyled.Wrap>
+      <Navigation />
+    </header>
   )
 }
-
-export default Header

@@ -26,7 +26,8 @@ git clone https://github.com/macjjuni/react18-ts-boilerplate.git
 
 - [x] React-Router 설정
 - [x] TailWindCSS
-- [x] <del>Redux-toolkit</del> => Zustand
+- [x] Zustand 전역 스토어 설정(<del>RTK에서 마이그레이션</del>)
+- [x] Count Down 예제 및 테스트 코드 작성
 - [x] vite-plugin-html inject
 - [x] Path Alias
 - [x] ESLint & Prettier

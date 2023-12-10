@@ -12,16 +12,11 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       eslint(),
-      // HTML Template 설정
       createHtmlPlugin({
-        minify: false,
+        minify: true,
         entry: 'src/entry/main.tsx',
-        template: 'index.html',
-        inject: {
-          data: {
-            title: env.VITE_TITLE,
-          },
-        },
+        template: '/public/index.html',
+        inject: { data: { title: env.VITE_TITLE } },
       }),
     ],
     resolve: {

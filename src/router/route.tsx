@@ -2,7 +2,10 @@ import { lazy, type ReactElement } from 'react'
 import suspenser from '@/router/suspenser'
 import Loading from '@/components/fallbackUI/Loading'
 
+// Start - [Route Type]
+
 export interface IRoute {
+  id: number
   path: string
   title: string
   component: ReactElement
@@ -11,12 +14,20 @@ export interface IRoute {
   disabled: boolean
   //   permissions: 'admin' | 'user'
 }
+// End - [Route Type]
+
+// Start - [Router Pages]
 
 const HomeRazy = lazy(() => import('@/pages/Home'))
 const AboutRazy = lazy(() => import('@/pages/About'))
+const ZustandLazy = lazy(() => import('@/pages/Zustand'))
+// End - [Router Pages]
+
+// Start - [Define Route Array]
 
 const routes: IRoute[] = [
   {
+    id: 0,
     path: '',
     title: 'Home',
     component: suspenser(<HomeRazy />, <Loading />),
@@ -24,23 +35,38 @@ const routes: IRoute[] = [
     disabled: false,
   },
   {
+    id: 1,
     path: 'about',
     title: 'About',
     component: suspenser(<AboutRazy />, <Loading />),
     auth: false,
     disabled: false,
   },
+  {
+    id: 2,
+    path: 'zustand',
+    title: 'Zustand',
+    component: suspenser(<ZustandLazy />, <Loading />),
+    auth: false,
+    disabled: false,
+  },
 ]
+// End - [Define Route Array]
 
-type MenuTypes = Omit<IRoute, 'component'>
+// Start - [Navigation Menu Type]
 
-// 네비게이션 메뉴 리스트
-export const menuList: MenuTypes[] = routes.reduce((acc: MenuTypes[], cur) => {
-  const { path, title, auth, disabled } = cur
+type MenuListTypes = Omit<IRoute, 'component'>
+// End - [Navigation Menu Type]
+
+// Start - [Navigation MenuList]
+
+export const menuList: MenuListTypes[] = routes.reduce((acc: MenuListTypes[], cur) => {
+  const { id, path, title, auth, disabled } = cur
   if (!disabled) {
-    acc.push({ path, title, auth, disabled })
+    acc.push({ id, path, title, auth, disabled })
   }
   return acc
 }, [])
+// End - [Navigation Navigation MenuList]
 
 export default routes

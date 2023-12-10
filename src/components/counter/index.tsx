@@ -24,15 +24,15 @@ function Counter() {
         <CountText />
       </div>
       <div className="flex justify-center items-center gap-md w-1/2">
-        <button type="button" onClick={onIncrease} className="counter_up_button flex justify-center items-center w-full py-xs px-md border rounded-xs">
+        <button type="button" onClick={onIncrease} data-testid="counter-up-button" className="flex justify-center items-center w-full py-xs px-md border rounded-xs">
           Up
         </button>
-        <button type="button" onClick={onDecrease} className="counter_down_button flex justify-center items-center w-full py-xs px-md border rounded-xs">
+        <button type="button" onClick={onDecrease} data-testid="counter-down-button" className="flex justify-center items-center w-full py-xs px-md border rounded-xs">
           Down
         </button>
       </div>
       <div className="w-1/2">
-        <button type="button" onClick={onClaer} className="counter_clear_button flex justify-center items-center w-full py-xs px-md border rounded-xs">
+        <button type="button" onClick={onClaer} data-testid="counter-clear-button" className="flex justify-center items-center w-full py-xs px-md border rounded-xs">
           Clear
         </button>
       </div>

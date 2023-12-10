@@ -2408,7 +2408,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^9.0.0":
+"@testing-library/dom@npm:^9.0.0, @testing-library/dom@npm:^9.3.3":
   version: 9.3.3
   resolution: "@testing-library/dom@npm:9.3.3"
   dependencies:
@@ -7842,6 +7842,7 @@ __metadata:
   dependencies:
     "@babel/preset-env": ^7.23.5
     "@babel/preset-react": ^7.23.3
+    "@testing-library/dom": ^9.3.3
     "@testing-library/jest-dom": ^6.1.5
     "@testing-library/react": ^14.1.2
     "@types/jest": ^29.5.11

@@ -1,46 +1,50 @@
 import { render, fireEvent } from '@testing-library/react'
+import { screen } from '@testing-library/dom'
+
 import CountText from './CountText'
 import Counter from '.'
 
 const initValue = 0
 
 describe('<Counter /> Test', () => {
-  let countContainer: HTMLElement
-  let countTextContainer: HTMLElement
-
-  beforeEach(() => {
-    const renderCounter = () => render(<Counter />)
-    const renderCountText = () => render(<CountText />)
-    countContainer = renderCounter().container
-    countTextContainer = renderCountText().container
-  })
+  // Start - [Render Test]
 
   test('<CountText/> render test', () => {
-    const countEle = countTextContainer.querySelector('.counter_text')
+    render(<CountText />)
+    const countEle = screen.getByTestId('counter-text')
     expect(countEle).toBeInTheDocument()
   })
 
-  test('<Counter/> render test', () => {
-    const upButton = countContainer.querySelector('.counter_up_button')
-    const downButton = countContainer.querySelector('.counter_down_button')
-    const clearButton = countContainer.querySelector('.counter_clear_button')
+  test('<Counter/> Buttons render test', () => {
+    render(<Counter />)
+    const upButton = screen.getByTestId('counter-up-button')
+    const downButton = screen.getByTestId('counter-down-button')
+    const clearButton = screen.getByTestId('counter-clear-button')
 
     expect(upButton && downButton && clearButton).toBeInTheDocument()
   })
+  // End - [Render Test]
+
+  // Start - [Function Test]
 
   test('Counter up test', () => {
-    const upButton = countContainer.querySelector('.counter_up_button')
+    render(<Counter />)
+
+    const countEle = screen.getByTestId('counter-text')
+    const upButton = screen.getByTestId('counter-up-button')
     if (upButton) fireEvent.click(upButton)
 
     const expectedCount = (initValue + 1).toString()
-    expect(countTextContainer).toHaveTextContent(expectedCount)
+    expect(countEle).toHaveTextContent(expectedCount)
   })
 
   test('Counter down test', () => {
-    const countTextEle = countTextContainer.querySelector('.counter_text')
+    render(<Counter />)
+
+    const countTextEle = screen.getByTestId('counter-text')
     const initCountTxt = Number(countTextEle?.textContent) // 카운터 초기값
 
-    const downButton = countContainer.querySelector('.counter_down_button')
+    const downButton = screen.getByTestId('counter-down-button')
     if (downButton) fireEvent.click(downButton) // 감소 버튼 클릭
 
     const expectedCount = (initCountTxt - 1).toString()
@@ -49,13 +53,17 @@ describe('<Counter /> Test', () => {
   })
 
   test('Counter clear test', () => {
-    const upButton = countContainer.querySelector('.counter_up_button')
-    const clearButton = countContainer.querySelector('.counter_clear_button')
+    render(<Counter />)
+
+    const countTextEle = screen.getByTestId('counter-text')
+    const upButton = screen.getByTestId('counter-up-button')
+    const clearButton = screen.getByTestId('counter-clear-button')
 
     if (upButton) fireEvent.click(upButton)
     if (clearButton) fireEvent.click(clearButton)
 
     const expectedCount = '0'
-    expect(countTextContainer).toHaveTextContent(expectedCount)
+    expect(countTextEle).toHaveTextContent(expectedCount)
   })
+  // End - [Function Test]
 })

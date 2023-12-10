@@ -1,20 +1,26 @@
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import type StoreTypes from './store.type'
+import type IStroe from './store.type'
 
 const psersistKey = 'persist-key'
 
-export const useBearStore = create<StoreTypes>()(
+// Start - [Zustand Store]
+
+export const useStore = create<IStroe>()(
   devtools(
     persist(
       (set) => ({
-        bears: 0,
-        increase: (num) => set((state) => ({ bears: state.bears + num })),
-        clear: () => set(() => ({ bears: 0 })),
+        count: 0,
+        counter: (num) => set((state) => ({ ...{ count: state.count + num } })),
+        clear: () => set(() => ({ count: 0 })),
       }),
-      {
-        name: psersistKey, // persist key
-      },
+      { name: psersistKey }, // persist key
     ),
   ),
 )
+// End - [Zustand Store]
+
+// Start - [TSX, JSX환경 외에 사용하는 전역 스토어]
+export const store = useStore.getState()
+
+// End - [TSX, JSX환경 외에 사용하는 전역 스토어]

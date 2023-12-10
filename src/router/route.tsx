@@ -20,7 +20,7 @@ export interface IRoute {
 
 const HomeRazy = lazy(() => import('@/pages/Home'))
 const AboutRazy = lazy(() => import('@/pages/About'))
-const ZustandLazy = lazy(() => import('@/pages/Zustand'))
+const ZustandLazy = lazy(() => import('@/pages/Store'))
 // End - [Router Pages]
 
 // Start - [Define Route Array]
@@ -44,8 +44,8 @@ const routes: IRoute[] = [
   },
   {
     id: 2,
-    path: 'zustand',
-    title: 'Zustand',
+    path: 'store',
+    title: 'Store',
     component: suspenser(<ZustandLazy />, <Loading />),
     auth: false,
     disabled: false,

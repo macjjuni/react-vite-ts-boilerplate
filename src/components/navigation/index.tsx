@@ -1,20 +1,21 @@
-import React from 'react'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { menuList } from '@/router/route'
 
 // Start - [TailWindCSS]
-const navClass = 'flex justify-center items-center gap-lg'
+const navClass = 'px-md'
+const navMenuClass = 'flex justify-center items-center gap-md'
 const navItemClass = 'flex justify-center items-center'
-const linkClass = 'text-md hover:underline'
+const linkClass = 'text-md hover:underline py-xs px-sm'
 
 // End - [TailWindCSS]
 
 function Navigation() {
   return (
-    <nav>
-      <ul className={navClass}>
+    <nav className={navClass}>
+      <ul className={navMenuClass}>
         {menuList.map((menu) => (
-          <li key={menu.path} className={navItemClass}>
+          <li key={menu.id} className={navItemClass}>
             <Link to={menu.path} className={linkClass}>
               {menu?.title}
             </Link>
@@ -25,4 +26,4 @@ function Navigation() {
   )
 }
 
-export default React.memo(Navigation)
+export default memo(Navigation)

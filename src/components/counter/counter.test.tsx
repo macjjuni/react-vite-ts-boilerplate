@@ -7,6 +7,8 @@ import Counter from '.'
 const initValue = 0
 
 describe('<Counter /> Test', () => {
+  const renderCounter = () => render(<Counter />)
+
   // Start - [Render Test]
 
   test('<CountText/> render test', () => {
@@ -16,7 +18,7 @@ describe('<Counter /> Test', () => {
   })
 
   test('<Counter/> Buttons render test', () => {
-    render(<Counter />)
+    renderCounter()
     const upButton = screen.getByTestId('counter-up-button')
     const downButton = screen.getByTestId('counter-down-button')
     const clearButton = screen.getByTestId('counter-clear-button')
@@ -25,44 +27,44 @@ describe('<Counter /> Test', () => {
   })
   // End - [Render Test]
 
-  // Start - [Function Test]
+  // Start - [Function Test: Up, Down, Clear]
 
   test('Counter up test', () => {
-    render(<Counter />)
+    renderCounter()
 
     const countEle = screen.getByTestId('counter-text')
     const upButton = screen.getByTestId('counter-up-button')
-    if (upButton) fireEvent.click(upButton)
+    fireEvent.click(upButton) // 카운터 증가
 
     const expectedCount = (initValue + 1).toString()
     expect(countEle).toHaveTextContent(expectedCount)
   })
 
   test('Counter down test', () => {
-    render(<Counter />)
+    renderCounter()
 
     const countTextEle = screen.getByTestId('counter-text')
     const initCountTxt = Number(countTextEle?.textContent) // 카운터 초기값
 
     const downButton = screen.getByTestId('counter-down-button')
-    if (downButton) fireEvent.click(downButton) // 감소 버튼 클릭
+    fireEvent.click(downButton) // 카운터 감소
 
-    const expectedCount = (initCountTxt - 1).toString()
+    const expectedCount = (initCountTxt - 1).toString() // 초기값 - 1
 
     expect(countTextEle).toHaveTextContent(expectedCount)
   })
 
   test('Counter clear test', () => {
-    render(<Counter />)
+    renderCounter()
 
     const countTextEle = screen.getByTestId('counter-text')
     const upButton = screen.getByTestId('counter-up-button')
     const clearButton = screen.getByTestId('counter-clear-button')
 
-    if (upButton) fireEvent.click(upButton)
-    if (clearButton) fireEvent.click(clearButton)
+    fireEvent.click(upButton) // 카운터 증가
+    fireEvent.click(clearButton) // 카운터 초기화
 
-    const expectedCount = '0'
+    const expectedCount = '0' // 초기화 후 결과 카운트
     expect(countTextEle).toHaveTextContent(expectedCount)
   })
   // End - [Function Test]

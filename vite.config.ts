@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
       createHtmlPlugin({
         minify: true,
         entry: 'src/entry/main.tsx',
-        template: '/public/index.html',
+        template: '/src/index.html',
         inject: { data: { title: env.VITE_TITLE } },
       }),
     ],

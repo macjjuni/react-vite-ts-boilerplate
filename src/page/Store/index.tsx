@@ -1,5 +1,5 @@
 import Counter from '@/components/Counter'
-import MainLayout from '@/layout/Views/MainLayout'
+import MainLayout from '@/layout/page/MainLayout'
 
 export default function Zustand() {
   return (

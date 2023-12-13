@@ -18,9 +18,9 @@ export interface IRoute {
 
 // Start - [Router Pages]
 
-const HomeRazy = lazy(() => import('@/pages/Home'))
-const AboutRazy = lazy(() => import('@/pages/About'))
-const ZustandLazy = lazy(() => import('@/pages/Store'))
+const HomeRazy = lazy(() => import('@/page/Home'))
+const AboutRazy = lazy(() => import('@/page/About'))
+const ZustandLazy = lazy(() => import('@/page/Store'))
 // End - [Router Pages]
 
 // Start - [Define Route Array]

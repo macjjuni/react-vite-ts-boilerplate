@@ -1,11 +1,11 @@
 import { lazy } from 'react'
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
-import App from '@/entry/App'
+import App from '@/App'
 import suspenser from '@/router/suspenser'
 import Loading from '@/components/fallbackUI/Loading'
 import routes from '@/router/route'
 
-const ErrorRazy = lazy(() => import('@/pages/Error'))
+const ErrorRazy = lazy(() => import('@/page/Error'))
 
 const router = createBrowserRouter(
   createRoutesFromElements(

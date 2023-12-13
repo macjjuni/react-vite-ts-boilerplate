@@ -5,6 +5,7 @@ import Footer from '@/layout/Footer'
 
 // Start - [TailwindCSS]
 const layoutClass = `flex justify-center flex-col max-w-screen-lg min-h-layout mx-auto`
+
 // End - [TailwindCSS]
 
 export default function Layout({ children }: { children: ReactElement }) {

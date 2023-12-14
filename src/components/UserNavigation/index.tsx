@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
-import { menuList } from '@/router/route'
+import { userMenuList } from '@/router/routes'
 
 // Start - [TailWindCSS]
 const navClass = 'px-md'
@@ -14,7 +14,7 @@ function Navigation() {
   return (
     <nav className={navClass}>
       <ul className={navMenuClass}>
-        {menuList.map((menu) => (
+        {userMenuList.map((menu) => (
           <li key={menu.id} className={navItemClass}>
             <Link to={menu.path} className={linkClass}>
               {menu?.title}

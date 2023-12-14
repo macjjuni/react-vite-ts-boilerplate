@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { commonLayoutClass } from '@/layout/layout.style'
-import Navigation from '@/components/Navigation'
+import UserNavigation from '@/components/UserNavigation'
 
 // Start - [TailwindCSS]
 const headerClass = `h-header border-b flex justify-between items-center ${commonLayoutClass}`
@@ -25,7 +25,7 @@ function Header() {
   return (
     <header className={headerClass}>
       <Logo />
-      <Navigation />
+      <UserNavigation />
     </header>
   )
 }

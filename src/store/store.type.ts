@@ -12,6 +12,8 @@ interface IStore {
   count: number
   counter: CounterType
   clear: ClearType
+  adminSidebar: boolean
+  toggleAdminSidebar: () => void
 }
 
 export default IStore

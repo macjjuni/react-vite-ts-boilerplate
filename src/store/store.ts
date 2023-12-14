@@ -13,6 +13,8 @@ export const useStore = create<IStroe>()(
         count: 0,
         counter: (num) => set((state) => ({ ...{ count: state.count + num } })),
         clear: () => set(() => ({ count: 0 })),
+        adminSidebar: true,
+        toggleAdminSidebar: () => set((state) => ({ ...{ adminSidebar: !state.adminSidebar } })),
       }),
       { name: psersistKey }, // persist key
     ),

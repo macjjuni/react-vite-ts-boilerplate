@@ -16,7 +16,7 @@ const logoTitle = import.meta.env.VITE_TITLE || 'Not Found Title'
 
 function YetMemoizatedLogo() {
   return (
-    <Link className={logoClass} to="/">
+    <Link className={logoClass} to="/admin">
       {logoTitle} - Admin
     </Link>
   )

@@ -7,7 +7,7 @@ const layoutSize = {
     main: '100%',
     footer: '100%',
     onSidebar: '300px',
-    offSidebar: '72px',
+    offSidebar: '54px',
   },
   height: {
     layout: '100dvh',

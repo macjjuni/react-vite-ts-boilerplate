@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { commonLayoutClass } from '@/layout/layout.style'
+import UserAdminSwitchButton from '@/components/UserAdminSwitchButton'
 
 // Start - [TailwindCSS]
 const headerClass = `h-header border-b flex justify-between items-center ${commonLayoutClass}`
@@ -27,6 +28,7 @@ function Header() {
   return (
     <header className={headerClass}>
       <Logo />
+      <UserAdminSwitchButton />
     </header>
   )
 }

@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { userMenuList } from '@/router/routes'
+import UserAdminSwitchButton from '@/components/UserAdminSwitchButton'
 
 // Start - [TailWindCSS]
 const navClass = 'px-md'
@@ -21,6 +22,9 @@ function Navigation() {
             </Link>
           </li>
         ))}
+        <li>
+          <UserAdminSwitchButton />
+        </li>
       </ul>
     </nav>
   )

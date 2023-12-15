@@ -7853,6 +7853,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-remove-attr@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "react-remove-attr@npm:0.0.6"
+  checksum: 0da61954fb100b21612de8a9fd8d11c2ea638f4b05dc4d5ebf08b298c6caa8656ecc8ee627b646fc55a1c82ec7539d7a4aa8032c91ec1508964a2785130935ff
+  languageName: node
+  linkType: hard
+
 "react-router-dom@npm:^6.20.1":
   version: 6.20.1
   resolution: "react-router-dom@npm:6.20.1"
@@ -7914,6 +7921,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-icons: ^4.12.0
+    react-remove-attr: ^0.0.6
     react-router: ^6.20.1
     react-router-dom: ^6.20.1
     tailwindcss: ^3.3.6

@@ -9,9 +9,9 @@ import { commonLayoutClass } from '@/layout/layout.style'
 const defaultSidebarClass = `${commonLayoutClass} border-r transition-width ease-in-out duration-300`
 const onSidebarClass = `${defaultSidebarClass} w-onSidebar`
 const offSidebarClass = `${defaultSidebarClass} w-offSidebar`
-const menuListClass = 'flex flex-col justify-start items-start'
+const menuListClass = 'flex flex-col justify-start items-start gap-xs'
 const menuItemClass = 'w-full'
-const menuLinkClass = 'flex justify-start items-center gap-sm w-full p-xs text-lg font-semibold overflow-hidden whitespace-nowrap	'
+const menuLinkClass = 'flex justify-start items-center gap-sm w-full p-xs lg:px-0 text-lg font-semibold overflow-hidden whitespace-nowrap	'
 const activeClass = (bool: boolean) => (bool ? `${menuLinkClass} text-primary` : `${menuLinkClass} text-BLG700`)
 const toggleBtnClass = 'absolute bottom-xl right-[-16px] text-secondary'
 

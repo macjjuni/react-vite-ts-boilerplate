@@ -12,7 +12,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const isProd = env.NODE_ENV === 'production'
+  const isProd = mode === 'production'
 
   // Start - [Define Plugins]
 

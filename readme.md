@@ -1,4 +1,4 @@
-# React Boilerplate(React18_Vite5_TS)
+# React Boilerplate(React18-TypeScript-Vite5)
 
 <br>
 
@@ -18,17 +18,17 @@
 git clone https://github.com/macjjuni/react18-ts-boilerplate.git
 ```
 
-> <del>강제 예비 백수로 전락하기 전 채용 과제를 준비하기 위한...</del>
-
 <br>
 
 ## ✅ Ready
 
-- [x] React-Router 설정
+---
+
+- [x] React-Router 설정(@/router/index.tsx)
 - [x] TailWindCSS
 - [x] Zustand 전역 스토어 설정(<del>RTK에서 마이그레이션</del>)
-- [x] Count Down 예제 및 테스트 코드 작성
-- [x] vite-plugin-html inject
+- [x] MSW(Mock Service Worker) 2.0 설정
+- [x] vite-plugin-html inject 설정
 - [x] Path Alias
 - [x] ESLint & Prettier
 
@@ -36,6 +36,7 @@ git clone https://github.com/macjjuni/react18-ts-boilerplate.git
 
 ## 패키지 설치
 
+---
 ```
 > yarn
 or
@@ -43,6 +44,8 @@ or
 ```
 
 ## 개발서버 실행
+
+---
 
 ```
 > yarn dev
@@ -52,6 +55,7 @@ or
 
 ## 빌드 실행
 
+---
 ```
 > yarn build
 or

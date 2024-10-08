@@ -1,19 +1,19 @@
 // Start - [Counter Function Type]
-type CounterType = (nm: number) => void
+type CounterType = (nm: number) => void;
 
 // End - [Increase Function Type]
 
 // Start - [Clear Function Type]
-type ClearType = () => void
+type ClearType = () => void;
 
 // End - [Claer Function Type]
 
 interface IStore {
-  count: number
-  counter: CounterType
-  clear: ClearType
-  adminSidebar: boolean
-  toggleAdminSidebar: () => void
+  count: number;
+  counter: CounterType;
+  clear: ClearType;
+  adminSidebar: boolean;
+  toggleAdminSidebar: () => void;
 }
 
-export default IStore
+export default IStore;

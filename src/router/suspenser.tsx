@@ -1,5 +1,8 @@
-import { Suspense, type ReactElement } from 'react'
+import { type ReactNode, Suspense } from 'react';
 
-export default function suspenser(component: ReactElement, fallbackUI: ReactElement): ReactElement {
-  return <Suspense fallback={fallbackUI}>{component}</Suspense>
+export default function suspenser(
+  component: ReactNode,
+  fallbackUI: ReactNode
+): ReactNode {
+  return <Suspense fallback={fallbackUI}>{component}</Suspense>;
 }

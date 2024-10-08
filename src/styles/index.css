@@ -1,4 +1,3 @@
-@tailwind base;
 
 :root {
   box-sizing: border-box;
@@ -16,6 +15,3 @@
 body {
   margin: 0;
 }
-
-@tailwind components;
-@tailwind utilities;

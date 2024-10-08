@@ -1,16 +1,10 @@
-import { memo } from 'react'
-import { Link } from 'react-router-dom'
+import { memo } from 'react';
+import { Link } from 'react-router-dom';
 
-const logoClass = 'text-xl whitespace-nowrap'
+const logoTitle = import.meta.env.VITE_TITLE || 'Not Found Title';
 
-const logoTitle = import.meta.env.VITE_TITLE || 'Not Found Title'
-
-function Logo({ isAdmin }: { isAdmin?: boolean }) {
-  return (
-    <Link className={logoClass} to={isAdmin ? '/admin' : '/'}>
-      {logoTitle} {isAdmin && '- Admin'}
-    </Link>
-  )
+function Logo() {
+  return <Link to={'/'}>{logoTitle}</Link>;
 }
 
-export default memo(Logo)
+export default memo(Logo);

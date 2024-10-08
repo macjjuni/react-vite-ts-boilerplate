@@ -33,7 +33,6 @@
     "react/jsx-max-props-per-line": ["error", { "maximum": 4 }], // 한 줄에 최대 4개의 속성 허용
     "react/jsx-closing-bracket-location": ["error", "after-props"], // 닫는 괄호를 마지막 속성 바로 뒤에 위치
     "indent": ["error", 2, { "SwitchCase": 1, "ignoredNodes": ["JSXAttribute"]}], // 4칸 들여쓰기를 하지만 jsx 내 attribute 는 체크하지 않음
-    "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1, "ignoredNodes": ["JSXAttribute"]}],
     "max-len": ["warn", {"code": 240}], // 라인당 140자까지 허용
     "no-tabs": "error", // 탭 문자 불허
     "no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 1, "maxEOF": 1}], // 파일의 시작과 끝에는 1줄씩 빈줄 허용, 중간에는 2줄 허용
@@ -51,9 +50,8 @@
     "no-use-before-define": ["error", {"variables": false, "functions": false}], // 선언하기 전 사용 금지, 단 함수는 허용
     "no-plusplus": "off", // ++ 연산 사용 가능
     "arrow-body-style": "off", // arrow function 이 아니어도 됩
-    "lines-between-class-members": "off", // 클래스 멤버변수 사이 한줄 띄우지 않아도 됨
-    //        "@typescript-eslint/no-explicit-any": "off", // any 사용 가능
     "@typescript-eslint/ban-ts-comment": "off",
+    "lines-between-class-members": ["error", "always"],
     "react/jsx-filename-extension": [1, {"extensions": [".ts", ".tsx"]}],
     "react/function-component-definition": [
       2,
@@ -90,6 +88,8 @@
         "trailingComma": "none", // trailing comma 사용 안 함
         "useTabs": false
       }
-    ]
+    ],
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/no-throw-literal": "off"
   }
 }

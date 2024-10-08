@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import Logo from '@/components/Logo';
+import Logo from '@/components/Logo/logo';
 
 function Header() {
   return (

@@ -1,6 +1,7 @@
 import { ReactNode, memo } from 'react';
+import './main.scss';
 
 function Main({ children }: { children: ReactNode }) {
-  return <main>{children}</main>;
+  return <main className={'main'}>{children}</main>;
 }
 export default memo(Main);

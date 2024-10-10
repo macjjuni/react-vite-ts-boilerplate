@@ -1,0 +1,9 @@
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: $padding__medium;
+    flex: 0 0 $layout__footer__height;
+    font-size: 12px;
+}

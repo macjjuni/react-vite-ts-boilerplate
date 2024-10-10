@@ -1,8 +1,18 @@
-import { type ReactNode, Suspense } from 'react';
+import {
+  ReactNode,
+  ReactElement,
+  Suspense,
+  LazyExoticComponent,
+  ComponentType
+} from 'react';
 
 export default function suspenser(
-  component: ReactNode,
-  fallbackUI: ReactNode
-): ReactNode {
-  return <Suspense fallback={fallbackUI}>{component}</Suspense>;
+  Component: LazyExoticComponent<ComponentType>, // props가 없는 Lazy로 로드한 컴포넌트 타입
+  loader: ReactNode // 로딩 중 보여줄 UI
+): ReactElement {
+  return (
+    <Suspense fallback={loader}>
+      <Component />
+    </Suspense>
+  );
 }

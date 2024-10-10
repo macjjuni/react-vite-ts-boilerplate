@@ -1,0 +1,8 @@
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $padding__medium;
+    flex: 0 0 $layout__header__height;
+}

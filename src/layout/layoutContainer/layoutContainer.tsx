@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router';
 import { Header, Main, Footer } from '@/layout';
+import './layoutContainer.scss';
 
-export default function UserLayout() {
+export default function Layout() {
   return (
-    <div>
+    <div className={'layout__container'}>
       <Header />
       <Main>
         <Outlet />

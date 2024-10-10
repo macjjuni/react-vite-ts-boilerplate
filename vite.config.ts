@@ -6,12 +6,10 @@ import react from "@vitejs/plugin-react-swc";
 import { compression } from "vite-plugin-compression2";
 import removeAttr from "react-remove-attr";
 import { visualizer } from "rollup-plugin-visualizer";
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-
-// import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  console.log(mode);
   const env = loadEnv(mode, process.cwd(), "");
   const isProd = mode === "production";
 
@@ -33,7 +31,7 @@ export default defineConfig(({ mode }) => {
     title: `${env.VITE_TITLE} Visualizer`,
     open: true,
     gzipSize: true,
-    template: "network", // sunburst, treemap, network, raw-data, list
+    template: "treemap", // sunburst, treemap, network, raw-data, list
     brotliSize: true
   }) as unknown as PluginOption;
 
@@ -41,6 +39,11 @@ export default defineConfig(({ mode }) => {
 
   return {
     resolve: { alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }] },
-    plugins: [react(), eslint(), compressPlugin, htmlPlugin, removeAttrPlugin, visualizerPlugin, vanillaExtractPlugin()]
+    plugins: [react(), eslint(), compressPlugin, htmlPlugin, removeAttrPlugin, visualizerPlugin],
+    css : {
+      preprocessorOptions: {
+        scss: { additionalData: "@import \"@/style/index\";\n" }
+      }
+    }
   };
 });

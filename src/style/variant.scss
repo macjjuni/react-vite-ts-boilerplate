@@ -1,0 +1,32 @@
+
+
+// region [Layout]
+
+$layout__body__height: 100dvh;
+$layout__header__height: 48px;
+$layout__footer__height: 40px;
+$layout__main__height: calc($layout__body__height - ($layout__header__height + $layout__footer__height));
+
+// endregion
+
+
+// region [Spacing]
+
+$padding__xsmall: 2px;
+$padding__small: 4px;
+$padding__medium: 8px;
+$padding__large: 12px;
+$padding__xlarge: 16px;
+
+$margin__xsmall: 2px;
+$margin__small: 4px;
+$margin__medium: 8px;
+$margin__large: 12px;
+$margin__xlarge: 16px;
+
+// endregion
+
+
+
+$color__black: #000;
+$color__white: #fff;
